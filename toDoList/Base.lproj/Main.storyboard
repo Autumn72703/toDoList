@@ -3,6 +3,8 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,12 +33,133 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do" id="Acz-e1-t1o">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N9Z-SG-GDh"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N9Z-SG-GDh">
+                            <connections>
+                                <segue destination="MzL-qf-qvi" kind="show" id="sL3-Ob-2FQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="bD5-eF-zXs" kind="show" identifier="moveToComplete" id="uTO-Yd-8r9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XIB-xj-B8g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="802.89855072463774" y="109.82142857142857"/>
+        </scene>
+        <!--Complete To Do View Controller-->
+        <scene sceneID="gV1-KQ-Qni">
+            <objects>
+                <viewController id="bD5-eF-zXs" customClass="CompleteToDoViewController" customModule="toDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bAf-ia-4KY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXI-Il-Ixa">
+                                <rect key="frame" x="113" y="386" width="188" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <state key="normal" title="Mark this task as complete!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="completeTapped:" destination="bD5-eF-zXs" eventType="touchUpInside" id="B7s-1B-7RL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-kT-5fS">
+                                <rect key="frame" x="189" y="337" width="37" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="c2Q-sg-BhD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rhR-pg-H9U"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="9gD-kT-5fS" id="Aza-dr-z2e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5PC-9g-Suz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="803" y="827"/>
+        </scene>
+        <!--Add To Do View Controller-->
+        <scene sceneID="LhK-Ui-Vx9">
+            <objects>
+                <viewController id="MzL-qf-qvi" customClass="AddToDoViewController" customModule="toDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zVb-wv-O4e">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Manager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gok-5a-9Bi">
+                                <rect key="frame" x="0.0" y="78" width="414" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aT8-SP-qgz">
+                                <rect key="frame" x="95" y="144" width="224" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Rwe-Un-zjL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N8a-8W-0jX">
+                                <rect key="frame" x="139.66666666666666" y="216" width="86" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18.5"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="A8B-ly-gOI">
+                                <rect key="frame" x="233" y="212" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-gf-YQm">
+                                <rect key="frame" x="155" y="285" width="104" height="50"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ylT-Jt-9UX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Add Task">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTapped:" destination="MzL-qf-qvi" eventType="touchUpInside" id="tOW-gN-c1T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eyO-DU-SCK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eyO-DU-SCK" firstAttribute="bottom" secondItem="YXu-gf-YQm" secondAttribute="bottom" constant="407" id="00q-Ye-gUa"/>
+                            <constraint firstItem="Gok-5a-9Bi" firstAttribute="leading" secondItem="eyO-DU-SCK" secondAttribute="leading" id="Mqe-Df-8Gl"/>
+                            <constraint firstItem="YXu-gf-YQm" firstAttribute="leading" secondItem="eyO-DU-SCK" secondAttribute="leading" constant="155" id="PQT-5e-YTB"/>
+                            <constraint firstItem="A8B-ly-gOI" firstAttribute="leading" secondItem="N8a-8W-0jX" secondAttribute="trailing" constant="7.3333333333333428" id="SLk-Pr-V8V"/>
+                            <constraint firstItem="YXu-gf-YQm" firstAttribute="top" secondItem="A8B-ly-gOI" secondAttribute="bottom" constant="36" id="StK-LR-6uA"/>
+                            <constraint firstItem="Gok-5a-9Bi" firstAttribute="centerX" secondItem="zVb-wv-O4e" secondAttribute="centerX" id="ZZh-3x-Iph"/>
+                            <constraint firstItem="Gok-5a-9Bi" firstAttribute="centerX" secondItem="aT8-SP-qgz" secondAttribute="centerX" id="d0X-dA-V59"/>
+                            <constraint firstItem="aT8-SP-qgz" firstAttribute="leading" secondItem="eyO-DU-SCK" secondAttribute="leading" constant="95" id="jCu-gJ-OiU"/>
+                            <constraint firstItem="aT8-SP-qgz" firstAttribute="top" secondItem="Gok-5a-9Bi" secondAttribute="bottom" constant="16" id="k3N-vf-EpA"/>
+                            <constraint firstItem="Gok-5a-9Bi" firstAttribute="top" secondItem="eyO-DU-SCK" secondAttribute="top" constant="34" id="keh-gL-BHB"/>
+                            <constraint firstItem="aT8-SP-qgz" firstAttribute="centerX" secondItem="YXu-gf-YQm" secondAttribute="centerX" id="nax-bU-FVz"/>
+                            <constraint firstItem="A8B-ly-gOI" firstAttribute="top" secondItem="aT8-SP-qgz" secondAttribute="bottom" constant="34" id="qIJ-Sd-21t"/>
+                            <constraint firstItem="N8a-8W-0jX" firstAttribute="centerY" secondItem="A8B-ly-gOI" secondAttribute="centerY" id="rkH-Py-JcI"/>
+                            <constraint firstItem="N8a-8W-0jX" firstAttribute="leading" secondItem="eyO-DU-SCK" secondAttribute="leading" constant="139.66666666666666" id="zrb-Ia-sSh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="H3K-pb-Axq"/>
+                    <connections>
+                        <outlet property="importantSwitch" destination="A8B-ly-gOI" id="aXn-J3-Zk5"/>
+                        <outlet property="titleTextField" destination="aT8-SP-qgz" id="5Qa-wV-kgK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAQ-QN-0eD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1482.608695652174" y="108.42391304347827"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AeW-5c-bBR">
@@ -58,6 +181,9 @@
         </scene>
     </scenes>
     <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

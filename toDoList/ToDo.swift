@@ -11,15 +11,3 @@ class ToDo {
     var name = ""
     var important = false
 }
-
-/*
- var newTask = ToDo(taskName : "")
-    
-    init(taskName : String){
-        name = taskName
-    }
-    func writeCode() {
-        print("Task: \(name)")
-    }
-}
-*/
