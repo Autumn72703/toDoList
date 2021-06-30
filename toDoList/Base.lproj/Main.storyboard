@@ -55,9 +55,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXI-Il-Ixa">
-                                <rect key="frame" x="113" y="386" width="188" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-kT-5fS">
+                                <rect key="frame" x="188.66666666666666" y="337" width="37" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BXI-Il-Ixa">
+                                <rect key="frame" x="107" y="385" width="200" height="30"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <state key="normal" title="Mark this task as complete!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -66,16 +71,15 @@
                                     <action selector="completeTapped:" destination="bD5-eF-zXs" eventType="touchUpInside" id="B7s-1B-7RL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gD-kT-5fS">
-                                <rect key="frame" x="189" y="337" width="37" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c2Q-sg-BhD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="c2Q-sg-BhD" firstAttribute="bottom" secondItem="BXI-Il-Ixa" secondAttribute="bottom" constant="320" id="WAd-qd-nsK"/>
+                            <constraint firstItem="BXI-Il-Ixa" firstAttribute="centerX" secondItem="9gD-kT-5fS" secondAttribute="centerX" id="msf-ME-vUS"/>
+                            <constraint firstItem="BXI-Il-Ixa" firstAttribute="top" secondItem="9gD-kT-5fS" secondAttribute="bottom" constant="27" id="pOu-e0-fT1"/>
+                            <constraint firstItem="BXI-Il-Ixa" firstAttribute="centerX" secondItem="bAf-ia-4KY" secondAttribute="centerX" id="rMP-JC-xD2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rhR-pg-H9U"/>
                     <connections>
